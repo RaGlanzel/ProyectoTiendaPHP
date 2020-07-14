@@ -1,7 +1,7 @@
 CREATE DATABASE tienda_master;
 USE tienda_master;
 
-CREATE TABLE Usuarios{
+CREATE TABLE Usuarios(
 Id          int(255) auto_increment not null,
 nombre      varchar(100) not null,
 apellidos   varchar(255),
@@ -11,7 +11,7 @@ rol         varchar(20),
 image       varchar(255),
 CONSTRAINT pk_usuarios PRIMARY KEY(id),
 CONSTRAINT uq_email UNIQUE(email)
-}ENGINE=InnoDb;
+)ENGINE=InnoDb;
 
 INSERT INTO usuarios VALUES(NULL, 'Admin', 'Admin', 'admin@admin.com', 'contraseña', 'Admin', NULL);
 
@@ -61,5 +61,5 @@ pedido_id    int(255) not null,
 producto_id  int(255) not null,
 CONSTRAINT pk_lineas_pedidos PRIMARY KEY(id),
 CONSTRAINT fk_linea_pedido FOREIGN KEY(pedido_id) REFERENCES pedidos(id),
-CONSTRAINT fk_linea_producto FOREIGN KEY(producto_id) REFERENCES productos(id),
+CONSTRAINT fk_linea_producto FOREIGN KEY(producto_id) REFERENCES productos(id)
 )ENGINE=InnoDb;
