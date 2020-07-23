@@ -1,0 +1,1 @@
+<h1>Gestionar categorías</h1>

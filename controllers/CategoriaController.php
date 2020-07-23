@@ -2,6 +2,6 @@
 class categoriaController{
     public function index()
     {
-        echo "Controlador Categoría, Acción index";
+       require_once 'views/categoria/index.php';
     }
 }
