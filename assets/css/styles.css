@@ -33,6 +33,16 @@ a:hover{
 table{
     text-align: center;
     width: 100%;
+    border: 1px solid #555;
+}
+td{
+    border-top: 1px solid #ccc;
+    padding: 2px; 
+}
+
+table{
+    text-align: center;
+    width: 100%;
     border-bottom: 1px solid #ccc;
 }
 
