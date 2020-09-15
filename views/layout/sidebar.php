@@ -10,6 +10,7 @@
                         <input type="password" name="password" />
                         <input type="submit" value="Enviar" />
                     </form>
+                     
                     <?php else: ?>
                         <h3><?=$_SESSION['identity']->nombre?> <?=$_SESSION['identity']->apellidos?></h3>
                     <?php endif; ?>
@@ -34,6 +35,10 @@
                         </li>
                         <li>
                             <a href="<?=base_url?>usuario/logout">Cerrar Sesion</a>
+                        </li>
+                        <?php else: ?>
+                        <li>
+                            <a href="<?=base_url?>usuario/registro">Registrate aqu&iacute;</a>
                         </li>
                         <?php endif; ?>
                     </ul>
