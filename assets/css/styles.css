@@ -272,7 +272,7 @@ button{
 
 /*CENTRAL*/
 #central{
-    width: 75%;
+    width: 70%;
     min-height: 500px;
     float: right;
     border-left: 1px solid #ccc;
@@ -293,7 +293,7 @@ button{
 
 /*PRODUCTOS*/
 .product{
-    width: 30%;
+    width: 28%;
     float:left;
     margin-left: 10px;
     margin-right: 10px;
