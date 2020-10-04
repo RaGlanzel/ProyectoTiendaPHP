@@ -44,6 +44,20 @@ class productoController
                 $producto->setCategoria_id($categoria);
                 $producto->setStock($stock);
                 $producto->setPrecio($precio);
+                //guardar la image
+                
+                $file = $_FILES['imagen'];
+                $filename = $file['name'];
+                $mimetype = $file['type'];
+                
+                if($mimetype == "image/jpg" || $mimetype == "image/jpeg" || $mimetype == "image/png" || $mimetype == "image/gif"){
+                    if(!is_dir('uploads/images')){
+                        mkdir('uploads/images', 0777, true);
+                    }
+                    
+                    move_uploaded_file($file['tmp_name'], 'uploads/images/'.$filename);
+                    $producto->setImagen($filename);
+                }
 
                 $save = $producto->save();
 
@@ -59,5 +73,15 @@ class productoController
             $_SESSION['producto'] = "failed";
         }
         header('Location:' . base_url . 'producto/gestion');
+    }
+    public function editar(){
+        
+    }
+    public function eliminar(){
+        Utils::isAdmin();
+        
+        if(isset($_GET['Id'])){
+            
+        }
     }
 }
