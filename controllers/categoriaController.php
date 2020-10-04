@@ -1,6 +1,7 @@
 <?php
 require_once 'models/categoria.php';
 
+
 class categoriaController{
     public function index()
     {
@@ -18,10 +19,10 @@ class categoriaController{
         Utils::isAdmin();
         
         if(isset($_POST) && isset($_POST['nombre'])){
-        $categoria = new Categoria();
-        $categoria->setNombre($_POST['nombre']);
-        $save = $categoria->save();
-       
+            $categoria = new Categoria();
+            $categoria->setNombre($_POST['nombre']);
+            $save = $categoria->save();
+            
         }
         
         header("Location:".base_url."categoria/index");

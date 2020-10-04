@@ -1,6 +1,6 @@
 <?php
 class Categoria{
-    private $id;
+    private $Id;
     private $nombre;
     private $db;
 
@@ -9,35 +9,35 @@ class Categoria{
     }
 
     function getId(){
-        return $this->id;
+        return $this->Id;
         }
     function getNombre(){
         return $this->nombre;
     }
-    function setId($id){
-        $this->id = $id;
+    function setId($Id){
+        $this->Id = $Id;
         }
     function setNombre($nombre){
         $this->nombre = $this->db->real_escape_string($nombre);
     }
 
     public function getAll(){
-        $categorias = $this->db->query("SELECT * FROM categorias ORDER BY id DESC;");
+        $categorias = $this->db->query("SELECT * FROM categorias ORDER BY Id DESC;");
         return $categorias;
     }
     
     public function save(){
         
-        $sql = "INSERT INTO 'categorias' VALUES(NULL, '{$this->getNombre()}');";
+        $sql = "INSERT INTO categorias VALUES(NULL, '{$this->getNombre()}');";
         $save = $this->db->query($sql);
-       
+        
        
         $result = false;
         if($save){
             $result = true;
             
         }
-        return $result; 
-        
+         
+        return $result;
     }
 }
