@@ -1,22 +1,23 @@
-<h1>Productos Destacados</h1>
-                <div class="product">
-                    <img src="assets/img/camiseta.png" />
-                    <h2>Camiseta Azul Ancha</h2>
-                    <p>300 pesos</p>
-                    <a href="" class="button">Comprar</a>
-                </div>
-                <div class="product">
-                    <img src="assets/img/camiseta.png" />
-                    <h2>Camiseta Azul Ancha</h2>
-                    <p>300 pesos</p>
-                    <a href="" class="button">Comprar</a>
-                </div>
-                <div class="product">
-                    <img src="assets/img/camiseta.png" />
-                    <h2>Camiseta Azul Ancha</h2>
-                    <p>300 pesos</p>
-                    <a href="" class="button">Comprar</a>
-                </div>
-            </div>
+<h1>Algunos de nuestros Productos </h1>
 
+	<?php while($product = $productos->fetch_object()): ?>
+                <div class="product">
+                
+                <?php if($product->image != null): ?>
+                
+                    <img src="<?=base_url?>uploads/images/<?=$product->image?>" />
+                    
+                <?php else: ?>
+                    
+                    <img src="<?=base_url?>assets/img/camiseta.png">
+                    
+                <?php endif; ?>
+                    
+                    <h2><?=$product->nombre?></h2>
+                    <p><?=$product->precio?></p>
+                    <a href="" class="button">Comprar</a>
+                </div>
+                <?php endwhile; ?>
+             
+            
        
